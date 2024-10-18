@@ -11,7 +11,7 @@ export default function List() {
         <FlatList
           style={styles.back}
           data={data}
-          renderItem={({ item }) => <Item nome={item.nome} idade={item.idade} data={item.data} />}
+          renderItem={({ item }) => <Item nome={item.nome} idade={item.idade} data={item.data} imagem={item.imagem}/>}
           keyExtractor={(item) => item.id}
         />
       </SafeAreaView>

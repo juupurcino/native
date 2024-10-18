@@ -4,7 +4,7 @@ import { Text } from "react-native";
 export default function HomeScreen() {
   return (
     <>
-      <Text> Index </Text>
+      <Text> Index das tabs</Text>
     </>
   );
 }

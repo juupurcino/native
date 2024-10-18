@@ -3,7 +3,7 @@ import { StyleSheet, Text} from 'react-native';
 export default function TabTwoScreen() {
   return (
     <>
-    <Text>Turma Mara</Text>
+    <Text>Pàgina componentes</Text>
     </>
   );
 }

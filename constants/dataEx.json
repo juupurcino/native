@@ -3,35 +3,39 @@
         "id" : "1",
         "nome" : "Juliana",
         "idade" : "21",
-        "data" : "01/07/2003"
- 
+        "data" : "01/07/2003",
+        "imagem" : "../assets/images/react-logo.png"        
     },
     {
         "id" : "2",
         "nome" : "Juliana",
         "idade" : "21",
-        "data" : "01/07/2003"
- 
+        "data" : "01/07/2003",
+        "imagem" : "../assets/images/react-logo.png"
+        
     },
     {
         "id" : "3",
         "nome" : "Juliana",
         "idade" : "21",
-        "data" : "01/07/2003"
- 
+        "data" : "01/07/2003",
+        "imagem" : "../assets/images/react-logo.png"
+        
     },
     {
         "id" : "4",
         "nome" : "Juliana",
         "idade" : "21",
-        "data" : "01/07/2003"
- 
+        "data" : "01/07/2003",
+        "imagem" : "../assets/images/react-logo.png"
+        
     },
     {
         "id" : "5",
         "nome" : "Juliana",
         "idade" : "21",
-        "data" : "01/07/2003"
+        "data" : "01/07/2003",
+        "imagem" : "../assets/images/react-logo.png"
  
     }
 ]

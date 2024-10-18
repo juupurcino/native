@@ -5,6 +5,7 @@ export const Header = ({image} : {image: ImageSourcePropType}) => {
         <>
             <View style={styles.background}>
                 <Text style={styles.colorText}>Header exemplo</Text>
+                <Text style={styles.fonte}>Testando fonte</Text>
                 <Image source={image}/>
             </View>
         </>
@@ -23,8 +24,11 @@ const styles = StyleSheet.create({
 
     colorText: {
         color: "#ffffff",
-        fontWeight: "700",
-        fontSize: 25    
+        fontSize: 25,
+        fontFamily: "inter"   
+    },
+    fonte: {
+        fontFamily: "Montserrat"
     }
 
   });
