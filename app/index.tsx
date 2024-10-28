@@ -1,7 +1,7 @@
 import { Link, router } from "expo-router";
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   TextInput,
   SafeAreaView,
@@ -10,20 +10,34 @@ import {
   Text,
   View,
 } from "react-native";
+import { FIREBASE_AUTH } from "@/firebaseConfig";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [count, setCount] = useState(0);
 
-  //   const onPress = () => setCount((prevCount) => prevCount + 1);
+  const auth =  FIREBASE_AUTH;
 
-  const onPress = () => {
-    router.push("/(tabs)");
-  };
+  useEffect(() => {
+    console.log(auth.currentUser)
+  }, [auth.currentUser])
+  
+  useEffect(() => {
+    console.log(email, pass)
+  }, [email, pass])
+  
 
-  console.log(email, pass);
-  console.log(typeof email, typeof pass);
+  const singIn = () => {
+    signInWithEmailAndPassword(auth, email, pass)
+    .then((dadosUsuario) => {
+      router.push('/(tabs)')
+    }).catch((err) => {
+      alert(err.message)
+    });
+  
+  }
 
   return (
     <>
@@ -53,7 +67,7 @@ export default function Login() {
           secureTextEntry={true}
         />
 
-        <TouchableOpacity style={styles.button} onPress={onPress}>
+        <TouchableOpacity style={styles.button} onPress={singIn}>
           <Text style={styles.bntText}>Entrar</Text>
         </TouchableOpacity>
         <View>
