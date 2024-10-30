@@ -4,9 +4,8 @@ export const Header = ({image} : {image: ImageSourcePropType}) => {
     return(
         <>
             <View style={styles.background}>
-                <Text style={styles.colorText}>Header exemplo</Text>
-                <Text style={styles.fonte}>Testando fonte</Text>
-                <Image source={image}/>
+                <Text style={styles.colorText}>Loja de Roupas</Text>
+                <Image style={styles.image} source={image}/>
             </View>
         </>
     )
@@ -14,21 +13,31 @@ export const Header = ({image} : {image: ImageSourcePropType}) => {
 
 const styles = StyleSheet.create({
     background:{
-        backgroundColor: "#332D2DFF",
+        backgroundColor: "#0cc0df",
         display: "flex",
         alignItems: "center",
-        justifyContent: "center",
-        paddingHorizontal: 10,
-        paddingVertical: 10
+        justifyContent: "space-between",
+        flexDirection: "row",
+        padding: 2
+        
+    
     },
 
     colorText: {
-        color: "#ffffff",
+        color: "#000000FF",
         fontSize: 25,
-        fontFamily: "inter"   
+        fontFamily: "inter",
+        padding: 8   
     },
     fonte: {
         fontFamily: "Montserrat"
+    },
+
+    image: {
+
+        width: 90,
+        height: 90
+
     }
 
   });

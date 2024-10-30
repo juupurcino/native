@@ -16,65 +16,49 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-  const [count, setCount] = useState(0);
 
-  const auth =  FIREBASE_AUTH;
-
-  useEffect(() => {
-    console.log(auth.currentUser)
-  }, [auth.currentUser])
-  
-  useEffect(() => {
-    console.log(email, pass)
-  }, [email, pass])
-  
+  const auth = FIREBASE_AUTH;
 
   const singIn = () => {
     signInWithEmailAndPassword(auth, email, pass)
-    .then((dadosUsuario) => {
-      router.push('/(tabs)')
-    }).catch((err) => {
-      alert(err.message)
-    });
-  
-  }
+      .then(() => {
+        router.push('/(tabs)');
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
+  };
 
   return (
-    <>
-      <SafeAreaView style={styles.container}>
-        <LinearGradient
-          style={styles.back}
-          colors={["#ffffff", "#c8c8c8"]}
-        >
-          <Image
-            style={styles.image}
-            source="../assets/images/login.png"
-          ></Image>
-        </LinearGradient>
-        <TextInput
-          style={styles.input}
-          onChangeText={setEmail}
-          value={email}
-          keyboardType="email-address"
-          placeholder="Email"
+    <SafeAreaView style={styles.container}>
+      <LinearGradient style={styles.back} colors={["#ffffff", "#c8c8c8"]}>
+        <Image
+          style={styles.image}
+          source={require("../assets/images/loja-de-roupas.png")} // Ajuste aqui para usar require
         />
-        <TextInput
-          style={styles.input}
-          onChangeText={setPass}
-          value={pass}
-          placeholder="Senha"
-          keyboardType="numeric"
-          secureTextEntry={true}
-        />
-
-        <TouchableOpacity style={styles.button} onPress={singIn}>
-          <Text style={styles.bntText}>Entrar</Text>
-        </TouchableOpacity>
-        <View>
-          <Link href={"/register"}>Cadastrar novo usuário</Link>
-        </View>
-      </SafeAreaView>
-    </>
+      </LinearGradient>
+      <TextInput
+        style={styles.input}
+        onChangeText={setEmail}
+        value={email}
+        keyboardType="email-address"
+        placeholder="Email"
+      />
+      <TextInput
+        style={styles.input} // Adicione a cor de borda aqui também
+        onChangeText={setPass}
+        value={pass}
+        placeholder="Senha"
+        keyboardType="numeric"
+        secureTextEntry={true}
+      />
+      <TouchableOpacity style={styles.button} onPress={singIn}>
+        <Text style={styles.bntText}>Entrar</Text>
+      </TouchableOpacity>
+      <View>
+        <Link href={"/register"}>Cadastrar novo usuário</Link>
+      </View>
+    </SafeAreaView>
   );
 }
 
@@ -82,8 +66,7 @@ const styles = StyleSheet.create({
   input: {
     padding: 10,
     margin: 10,
-    borderColor: "#CACACAFF",
-    borderWidth: 0,
+    borderWidth: 0, 
     borderRadius: 20,
     marginHorizontal: 10,
     width: "70%",
@@ -94,25 +77,23 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.23,
     shadowRadius: 2.62,
-
     elevation: 8,
   },
 
   button: {
-    backgroundColor: "#8E0ADADA",
+    backgroundColor: "#0A7CDADA",
     margin: 10,
     padding: 6,
     borderRadius: 18,
     width: "40%",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   },
 
   bntText: {
     fontFamily: "Montserrat",
     color: "#ffffff",
-    fontWeight: "600"
-    
+    fontWeight: "600",
   },
 
   back: {
@@ -128,11 +109,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    fontFamily: "Montserrat"
+    fontFamily: "Montserrat",
   },
 
   image: {
-    width: 70,
-    height: 70,
+    width: 120,
+    height: 120,
   },
 });

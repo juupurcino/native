@@ -7,11 +7,10 @@ export default function TabLayout() {
 
   return (
     <>
-    <Header image={require("../../assets/images/react-logo.png")}></Header>
+    <Header image={require("../../assets/images/1.png")}></Header>
       <Tabs>
-        <Tabs.Screen name="index" options={{headerShown: false, tabBarIcon: () => (<Text>😎</Text>)}}></Tabs.Screen>
-        <Tabs.Screen name="explore" options={{headerShown: false, tabBarIcon: () => (<Text>🐱‍👤</Text>)}}></Tabs.Screen>
-        <Tabs.Screen name="list" options={{headerShown: false, tabBarIcon: () => (<Text>👀</Text>)}}></Tabs.Screen>
+        <Tabs.Screen name="index" options={{headerShown: false, tabBarIcon: () => (<Text>🏠</Text>)}}></Tabs.Screen>
+
       </Tabs>
     </>
   );
