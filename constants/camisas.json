@@ -1,0 +1,20 @@
+[
+    {
+        "id": "1",
+        "produto": "Camisa 1",
+        "preco": "20",
+        "imagem": "../assets/images/react-logo.png"
+    },
+    {
+        "id": "2",
+        "produto": "Camisa 2",
+        "preco": "10",
+        "imagem": "../assets/images/react-logo.png"
+    },
+    {
+        "id": "3",
+        "produto": "Camisa 3",
+        "preco": "30",
+        "imagem": "../assets/images/react-logo.png"
+    }
+]

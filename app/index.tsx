@@ -19,10 +19,14 @@ export default function Login() {
 
   const auth = FIREBASE_AUTH;
 
-  const singIn = () => {
+  const handleSignIn = () => {
     signInWithEmailAndPassword(auth, email, pass)
       .then(() => {
-        router.push('/(tabs)');
+        if (email === "adm@adm.com") {
+          router.push('/(adm)');
+        } else {
+          router.push('/(tabs)');
+        }
       })
       .catch((err) => {
         alert(err.message);
@@ -34,7 +38,7 @@ export default function Login() {
       <LinearGradient style={styles.back} colors={["#ffffff", "#c8c8c8"]}>
         <Image
           style={styles.image}
-          source={require("../assets/images/loja-de-roupas.png")} // Ajuste aqui para usar require
+          source={require("../assets/images/loja-de-roupas.png")}
         />
       </LinearGradient>
       <TextInput
@@ -45,14 +49,14 @@ export default function Login() {
         placeholder="Email"
       />
       <TextInput
-        style={styles.input} // Adicione a cor de borda aqui também
+        style={styles.input}
         onChangeText={setPass}
         value={pass}
         placeholder="Senha"
-        keyboardType="numeric"
         secureTextEntry={true}
       />
-      <TouchableOpacity style={styles.button} onPress={singIn}>
+      
+      <TouchableOpacity style={styles.button} onPress={handleSignIn}>
         <Text style={styles.bntText}>Entrar</Text>
       </TouchableOpacity>
       <View>
@@ -66,7 +70,7 @@ const styles = StyleSheet.create({
   input: {
     padding: 10,
     margin: 10,
-    borderWidth: 0, 
+    borderWidth: 0,
     borderRadius: 20,
     marginHorizontal: 10,
     width: "70%",
@@ -79,7 +83,6 @@ const styles = StyleSheet.create({
     shadowRadius: 2.62,
     elevation: 8,
   },
-
   button: {
     backgroundColor: "#0A7CDADA",
     margin: 10,
@@ -89,13 +92,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-
   bntText: {
     fontFamily: "Montserrat",
     color: "#ffffff",
     fontWeight: "600",
   },
-
   back: {
     width: "100%",
     height: "auto",
@@ -105,13 +106,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 80,
   },
-
   container: {
     flex: 1,
     alignItems: "center",
     fontFamily: "Montserrat",
   },
-
   image: {
     width: 120,
     height: 120,
